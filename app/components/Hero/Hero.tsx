@@ -55,7 +55,7 @@ export default function Hero() {
 
           <div className={styles.stats}>
             <div className={styles.stat}>
-              <span className={styles.statNumber}>50+</span>
+              <span className={styles.statNumber}>10+</span>
               <span className={styles.statLabel}>Proyectos</span>
             </div>
             <div className={styles.stat}>

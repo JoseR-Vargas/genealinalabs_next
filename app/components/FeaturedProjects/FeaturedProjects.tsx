@@ -38,7 +38,6 @@ interface Project {
   name: string;
   description: string;
   category: string;
-  technologies: string[];
   url?: string;
 }
 
@@ -49,8 +48,7 @@ const PROJECTS: Project[] = [
     name: 'Big Ligas Barber Studio',
     description: 'Sitio web moderno para barbería profesional con sistema de reservas en línea, galería de estilos y promociones especiales.',
     category: 'Negocio Local',
-    technologies: ['React', 'Tailwind', 'Firebase'],
-    url: '#'
+    url: 'https://bigligasbeautybarberstudio.netlify.app/'
   },
   {
     id: 2,
@@ -58,8 +56,7 @@ const PROJECTS: Project[] = [
     name: 'Nice Surprise',
     description: 'Plataforma de comercio electrónico para regalos personalizados con catálogo interactivo y proceso de compra optimizado.',
     category: 'E-commerce',
-    technologies: ['Next.js', 'Stripe', 'MongoDB'],
-    url: '#'
+    url: 'https://nicesurprise.netlify.app/'
   },
   {
     id: 3,
@@ -67,8 +64,7 @@ const PROJECTS: Project[] = [
     name: 'Tecnicservice',
     description: 'Portal web para servicios técnicos especializados con sistema de cotizaciones, seguimiento de órdenes y atención al cliente.',
     category: 'Servicios',
-    technologies: ['React', 'Node.js', 'PostgreSQL'],
-    url: '#'
+    url: 'https://tecni-servi.com/'
   }
 ];
 
@@ -107,13 +103,7 @@ const FeaturedProjects = () => {
               <h3 className={styles.project__title}>{project.name}</h3>
               <p className={styles.project__description}>{project.description}</p>
               
-              <ul className={styles.project__technologies}>
-                {project.technologies.map((tech, idx) => (
-                  <li key={idx} className={styles.project__tech}>
-                    {tech}
-                  </li>
-                ))}
-              </ul>
+        
 
               {project.url && (
                 <a 
@@ -122,7 +112,7 @@ const FeaturedProjects = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span>Ver caso de estudio</span>
+                  <span>Ir al sitio web</span>
                   {Icons.external}
                 </a>
               )}

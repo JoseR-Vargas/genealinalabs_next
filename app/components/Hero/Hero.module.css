@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: calc(80px + var(--space-3xl)) var(--space-base) var(--space-3xl);
+  padding: clamp(100px, 15vh, 160px) clamp(1rem, 5vw, 2rem) clamp(60px, 10vh, 100px);
   overflow: hidden;
 }
 
@@ -82,13 +82,13 @@
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
-  padding: var(--space-xs) var(--space-base);
+  padding: 0.5rem 1rem;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-full);
   font-size: 0.875rem;
   color: var(--muted);
-  margin-bottom: var(--space-xl);
+  margin-bottom: 2rem;
   animation: fade-in-up 0.8s ease-out 0.2s backwards;
 }
 
@@ -105,7 +105,7 @@
   font-size: clamp(2rem, 5vw, 4rem);
   font-weight: 800;
   line-height: 1.1;
-  margin-bottom: var(--space-lg);
+  margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
   animation: fade-in-up 0.8s ease-out 0.3s backwards;
 }
@@ -113,7 +113,7 @@
 .titleLine {
   display: block;
   color: var(--text-strong);
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0.75rem;
 }
 
 .titleGradient {
@@ -129,26 +129,24 @@
   font-size: clamp(1rem, 2vw, 1.25rem);
   line-height: 1.6;
   color: var(--muted);
-  margin-bottom: var(--space-2xl);
+  margin: 0 auto 2.5rem;
   max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
   animation: fade-in-up 0.8s ease-out 0.4s backwards;
 }
 
 /* Buttons */
 .buttons {
   display: flex;
-  gap: var(--space-base);
+  gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
-  margin-bottom: var(--space-3xl);
+  margin-bottom: 3.5rem;
   animation: fade-in-up 0.8s ease-out 0.5s backwards;
 }
 
 .primaryBtn,
 .secondaryBtn {
-  padding: var(--space-base) var(--space-2xl);
+  padding: 0.875rem 2rem;
   border-radius: var(--radius-full);
   font-weight: 600;
   font-size: 1rem;
@@ -156,7 +154,7 @@
   transition: all var(--transition-base);
   display: inline-flex;
   align-items: center;
-  gap: var(--space-xs);
+  gap: 0.5rem;
   border: none;
 }
 
@@ -194,7 +192,7 @@
 /* Stats */
 .stats {
   display: flex;
-  gap: var(--space-3xl);
+  gap: clamp(2rem, 5vw, 4rem);
   justify-content: center;
   flex-wrap: wrap;
   animation: fade-in-up 0.8s ease-out 0.6s backwards;
@@ -204,7 +202,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-xs);
+  gap: 0.5rem;
 }
 
 .statNumber {
@@ -226,21 +224,40 @@
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
-    padding: calc(70px + var(--space-2xl)) var(--space-base) var(--space-2xl);
+    padding: clamp(80px, 12vh, 120px) 1.25rem clamp(50px, 8vh, 80px);
   }
 
   .buttons {
     flex-direction: column;
     align-items: stretch;
+    gap: 0.75rem;
   }
 
   .primaryBtn,
   .secondaryBtn {
     width: 100%;
     justify-content: center;
+    padding: 1rem 1.5rem;
   }
 
   .stats {
-    gap: var(--space-xl);
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .badge {
+    margin-bottom: 1.5rem;
+    padding: 0.4rem 0.875rem;
+  }
+
+  .title {
+    margin-bottom: 1.25rem;
+  }
+
+  .description {
+    margin-bottom: 2rem;
+  }
+
+  .buttons {
+    margin-bottom: 2.5rem;
   }
 }

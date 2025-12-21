@@ -5,6 +5,28 @@
   position: relative;
 }
 
+/* Local container (CSS Modules) */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-base);
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 var(--space-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 var(--space-2xl);
+  }
+}
+
 /* ===== PRICING HEADER ===== */
 .header {
   text-align: center;
@@ -79,7 +101,7 @@
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-xl);
-  padding: var(--space-xl);
+  padding: var(--space-lg);
   text-align: center;
   transition: all var(--transition-base);
   animation: fadeInUp 0.6s ease both;
@@ -89,7 +111,7 @@
 
 @media (min-width: 768px) {
   .card {
-    padding: var(--space-2xl);
+    padding: var(--space-xl);
   }
 }
 

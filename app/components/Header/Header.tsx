@@ -1,7 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import styles from './Header.module.css';
+import genealinaLogo from '@/app/img/Genealina_logo.jpeg';
 
 const NAV_LINKS = [
   { id: 'home', label: 'Inicio' },
@@ -35,7 +37,14 @@ export default function Header() {
     <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={styles.container}>
         <div className={styles.logo}>
-          <span className={styles.logoIcon}>⚡</span>
+          <Image
+            src={genealinaLogo}
+            alt="GenealinaLabs"
+            className={styles.logoImage}
+            width={28}
+            height={28}
+            priority
+          />
           <span className={styles.logoText}>GenealinaLabs</span>
         </div>
 
@@ -49,9 +58,7 @@ export default function Header() {
               {link.label}
             </button>
           ))}
-          <button className={styles.ctaButton}>
-            Comenzar
-          </button>
+
         </nav>
 
         <button

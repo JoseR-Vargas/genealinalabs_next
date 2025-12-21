@@ -1,4 +1,6 @@
+import Image from 'next/image';
 import styles from './Footer.module.css';
+import genealinaLogo from '@/app/img/Genealina_logo.jpeg';
 
 const FOOTER_LINKS = {
   company: [
@@ -53,7 +55,13 @@ export default function Footer() {
         <div className={styles.content}>
           <div className={styles.brand}>
             <div className={styles.logo}>
-              <span className={styles.logoIcon}>⚡</span>
+              <Image
+                src={genealinaLogo}
+                alt="GenealinaLabs"
+                className={styles.logoImage}
+                width={32}
+                height={32}
+              />
               <span className={styles.logoText}>GenealinaLabs</span>
             </div>
             <p className={styles.tagline}>
