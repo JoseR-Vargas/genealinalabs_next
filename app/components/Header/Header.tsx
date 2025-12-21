@@ -36,7 +36,7 @@ export default function Header() {
       <div className={styles.container}>
         <div className={styles.logo}>
           <span className={styles.logoIcon}>⚡</span>
-          <span className={styles.logoText}>TechLabs</span>
+          <span className={styles.logoText}>GenealinaLabs</span>
         </div>
 
         <nav className={`${styles.nav} ${isMobileMenuOpen ? styles.navOpen : ''}`}>

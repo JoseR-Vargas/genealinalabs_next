@@ -1,9 +1,11 @@
-import Header from './components/Header';
-import Hero from './components/Hero';
-import Services from './components/Services';
-import Pricing from './components/Pricing';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Header from "./components/Header/Header";
+import Hero from "./components/Hero/Hero";
+import Services from "./components/Services/Services";
+import FeaturedProjects from "./components/FeaturedProjects/FeaturedProjects";
+import Pricing from "./components/Pricing/Pricing";
+import Contact from "./components/Contact/Contact";
+import Footer from "./components/Footer/Footer";
+
 
 export default function Home() {
   return (
@@ -12,6 +14,7 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
+        <FeaturedProjects />
         <Pricing />
         <Contact />
       </main>

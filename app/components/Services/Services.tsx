@@ -25,20 +25,9 @@ const SERVICES = [
       </svg>
     )
   },
+
   {
     id: 3,
-    title: 'Diseño Responsive',
-    description: 'Experiencia perfecta en móviles, tablets y escritorio.',
-    features: ['Mobile First', 'UI/UX', 'Animaciones'],
-    icon: (
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
-        <line x1="12" y1="18" x2="12.01" y2="18"/>
-      </svg>
-    )
-  },
-  {
-    id: 4,
     title: 'Mantenimiento',
     description: 'Soporte continuo para mantener tu sitio actualizado y seguro.',
     features: ['Updates', 'Seguridad', 'Soporte 24/7'],

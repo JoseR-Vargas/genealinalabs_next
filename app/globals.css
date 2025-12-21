@@ -98,6 +98,58 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  isolation: isolate;
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Subtle animated tech grid + ambient glows */
+body::before {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(700px 420px at 18% 12%, rgba(6, 182, 212, 0.14) 0%, transparent 60%),
+    radial-gradient(900px 520px at 82% 24%, rgba(99, 102, 241, 0.14) 0%, transparent 58%),
+    radial-gradient(800px 560px at 45% 88%, rgba(168, 85, 247, 0.10) 0%, transparent 60%);
+  background-size: 88px 88px, 88px 88px, auto, auto, auto;
+  background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+  opacity: 0.55;
+  mask-image: radial-gradient(closest-side at 50% 35%, #000 0%, transparent 78%);
+  animation: global-grid-drift 22s linear infinite;
+}
+
+/* Scanline + chroma haze */
+body::after {
+  background-image:
+    repeating-linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.022) 0px,
+      rgba(255, 255, 255, 0.022) 1px,
+      transparent 1px,
+      transparent 7px
+    ),
+    conic-gradient(
+      from 200deg at 50% 45%,
+      rgba(99, 102, 241, 0.12),
+      rgba(6, 182, 212, 0.08),
+      rgba(168, 85, 247, 0.10),
+      rgba(236, 72, 153, 0.06),
+      rgba(99, 102, 241, 0.12)
+    );
+  background-size: 100% 320px, 180% 180%;
+  background-position: 0 -40%, 50% 50%;
+  opacity: 0.42;
+  filter: blur(18px) saturate(1.15);
+  mix-blend-mode: screen;
+  animation: global-scan 7.5s ease-in-out infinite;
 }
 
 /* ===== CONTAINER ===== */
@@ -159,3 +211,20 @@ body {
   75% { transform: translate(30px, 10px) scale(1.02); }
 }
 
+@keyframes global-grid-drift {
+  from { background-position: 0 0, 0 0, 0 0, 0 0, 0 0; }
+  to { background-position: -176px 176px, -176px 176px, 0 0, 0 0, 0 0; }
+}
+
+@keyframes global-scan {
+  0% { background-position: 0 -40%, 50% 55%; opacity: 0.36; }
+  55% { background-position: 0 60%, 50% 45%; opacity: 0.52; }
+  100% { background-position: 0 140%, 50% 55%; opacity: 0.36; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none;
+  }
+}

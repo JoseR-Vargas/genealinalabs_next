@@ -2,11 +2,47 @@
   position: relative;
   padding: var(--space-4xl) var(--space-base);
   background: transparent;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.services::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background-image:
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: 0 0, 0 0;
+  opacity: 0.32;
+  mask-image: radial-gradient(closest-side at 50% 35%, #000 0%, transparent 72%);
+  pointer-events: none;
+  z-index: 0;
+  animation: services-grid 18s linear infinite;
+}
+
+.services::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(800px 500px at 15% 15%, rgba(6, 182, 212, 0.12), transparent 60%),
+    radial-gradient(900px 600px at 85% 30%, rgba(168, 85, 247, 0.10), transparent 58%),
+    linear-gradient(180deg, transparent, rgba(99, 102, 241, 0.14), transparent);
+  background-size: auto, auto, 100% 280px;
+  background-position: 0 0, 0 0, 0 -280px;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 0;
+  animation: services-scan 7s ease-in-out infinite;
 }
 
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 /* Header */
@@ -167,5 +203,23 @@
 @media (min-width: 769px) and (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@keyframes services-grid {
+  from { background-position: 0 0, 0 0; }
+  to { background-position: -64px 64px, -64px 64px; }
+}
+
+@keyframes services-scan {
+  0% { background-position: 0 0, 0 0, 0 -280px; }
+  55% { background-position: 0 0, 0 0, 0 40%; }
+  100% { background-position: 0 0, 0 0, 0 120%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .services::before,
+  .services::after {
+    animation: none;
   }
 }

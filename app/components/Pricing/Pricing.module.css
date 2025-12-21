@@ -1,0 +1,316 @@
+/* ===== PRICING SECTION ===== */
+.pricing {
+  padding: var(--space-4xl) 0;
+  background: transparent;
+  position: relative;
+}
+
+/* ===== PRICING HEADER ===== */
+.header {
+  text-align: center;
+  margin-bottom: var(--space-3xl);
+}
+
+.label {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-base);
+  background: rgba(139, 92, 246, 0.12);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+  color: var(--text-strong);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-lg);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-size: var(--fs-3xl);
+  font-weight: 700;
+  color: var(--text-strong);
+  line-height: 1.2;
+  margin-bottom: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: var(--fs-4xl);
+  }
+}
+
+.titleGradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: var(--fs-base);
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .subtitle {
+    font-size: var(--fs-lg);
+  }
+}
+
+/* ===== PRICING GRID ===== */
+.grid {
+  display: grid;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-3xl);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+  }
+}
+
+/* ===== PRICING CARD ===== */
+.card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  text-align: center;
+  transition: all var(--transition-base);
+  animation: fadeInUp 0.6s ease both;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: var(--space-2xl);
+  }
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.55);
+  border-color: var(--border-strong);
+}
+
+.cardPopular {
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  transform: scale(1.02);
+}
+
+@media (min-width: 768px) {
+  .cardPopular {
+    transform: scale(1.05);
+    z-index: 1;
+  }
+}
+
+.cardPopular:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+@media (min-width: 768px) {
+  .cardPopular:hover {
+    transform: translateY(-8px) scale(1.05);
+  }
+}
+
+/* ===== PRICING BADGE ===== */
+.popularBadge {
+  position: absolute;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1.25rem;
+  background: var(--gradient-primary);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 12px rgba(139, 92, 246, 0.5);
+  white-space: nowrap;
+  z-index: 10;
+}
+
+/* ===== PRICING CONTENT ===== */
+.cardHeader {
+  margin-bottom: var(--space-xl);
+}
+
+.planTag {
+  display: block;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: #818cf8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-base);
+}
+
+.cardPopular .planTag {
+  color: var(--primary-light);
+}
+
+.planTitle {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--text-strong);
+  margin-bottom: var(--space-base);
+}
+
+.cardPopular .planTitle {
+  color: var(--white);
+}
+
+.planDescription {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.cardPopular .planDescription {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ===== PRICING FEATURES ===== */
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+  flex-grow: 1;
+  list-style: none;
+  padding: 0;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  text-align: left;
+}
+
+.cardPopular .feature {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.checkIcon {
+  width: 18px;
+  height: 18px;
+  color: var(--accent-emerald);
+  flex-shrink: 0;
+}
+
+/* ===== PRICING BUTTON ===== */
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-base) var(--space-xl);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+  width: 100%;
+  cursor: pointer;
+  border: none;
+}
+
+.ctaButtonPrimary {
+  background: var(--gradient-primary);
+  color: var(--white);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+}
+
+.ctaButtonPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.6);
+}
+
+.ctaButtonSecondary {
+  background: transparent;
+  color: var(--text-strong);
+  border: 1px solid var(--border);
+}
+
+.ctaButtonSecondary:hover {
+  border-color: rgba(139, 92, 246, 0.7);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.ctaButton svg {
+  transition: transform var(--transition-base);
+}
+
+.ctaButton:hover svg {
+  transform: translateX(4px);
+}
+
+/* ===== PRICING INFO ===== */
+.info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-base);
+  padding: var(--space-lg);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .info {
+    flex-direction: column;
+  }
+}
+
+.infoIcon {
+  font-size: var(--fs-2xl);
+}
+
+.infoText {
+  font-size: var(--fs-base);
+  color: var(--muted);
+  margin: 0;
+}
+
+.infoText strong {
+  color: var(--text-strong);
+  cursor: pointer;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 767px) {
+  .pricing {
+    padding: var(--space-3xl) 0;
+  }
+  
+  .planTitle {
+    font-size: var(--fs-lg);
+  }
+}

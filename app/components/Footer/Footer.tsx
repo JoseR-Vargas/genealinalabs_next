@@ -54,7 +54,7 @@ export default function Footer() {
           <div className={styles.brand}>
             <div className={styles.logo}>
               <span className={styles.logoIcon}>⚡</span>
-              <span className={styles.logoText}>TechLabs</span>
+              <span className={styles.logoText}>GenealinaLabs</span>
             </div>
             <p className={styles.tagline}>
               Transformando ideas en experiencias digitales excepcionales.
@@ -106,12 +106,9 @@ export default function Footer() {
 
         <div className={styles.bottom}>
           <p className={styles.copyright}>
-            © {currentYear} TechLabs. Todos los derechos reservados.
+            © {currentYear} GenealinaLabs. Todos los derechos reservados.
           </p>
-          <div className={styles.badges}>
-            <span className={styles.badge}>Hecho con ❤️</span>
-            <span className={styles.badge}>Next.js</span>
-          </div>
+
         </div>
       </div>
     </footer>
