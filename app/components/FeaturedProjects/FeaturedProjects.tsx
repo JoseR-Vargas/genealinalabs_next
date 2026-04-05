@@ -45,10 +45,10 @@ const PROJECTS: Project[] = [
   {
     id: 1,
     icon: 'barber',
-    name: 'Big Ligas Barber Studio',
-    description: 'Sitio web moderno para barbería profesional con sistema de reservas en línea, galería de estilos y promociones especiales.',
+    name: 'BookingApp',
+    description: 'Sitio web moderno para reserva de citas.',
     category: 'Negocio Local',
-    url: 'https://bigligasbeautybarberstudio.netlify.app/'
+    url: 'https://booking-app-front-peach.vercel.app/'
   },
   {
     id: 2,
